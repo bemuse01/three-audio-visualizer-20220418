@@ -4,6 +4,7 @@ import {Particle} from '../class/particle/particle.js'
 export default {
     template: `
         <div :style="visualizerStyle">
+            <div :style="bgStyle"></div>
             <canvas :style="canvasStyle" :ref="el => canvas = el" />
             <div :style="logoStyle">
                 <div :style="logoImgStyle"></div>
@@ -41,8 +42,20 @@ export default {
             height: '100%',
         })
         const canvasStyle = ref({
+            position: 'absolute',
+            top: '0',
+            left: '0',
             width: '100%',
             height: '100%'
+        })
+        const bgStyle = ref({
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            background: `url('./assets/src/ranbu_suisei.jpg') no-repeat center / cover`,
+            opacity: '0.2'
         })
         const logoStyle = ref({
             position: 'absolute',
@@ -92,6 +105,7 @@ export default {
             canvas,
             visualizerStyle,
             canvasStyle,
+            bgStyle,
             logoStyle,
             logoImgStyle
         }

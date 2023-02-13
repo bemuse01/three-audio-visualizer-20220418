@@ -44,7 +44,7 @@ export default {
         const store = useStore()
         const audio = computed(() => store.getters['audio/getAudio'])
         const root = ref()
-
+        const color = '#2073ff'
 
         // styles
         const rootStyle = ref({
@@ -73,7 +73,7 @@ export default {
             position: 'absolute',
             width: '100%',
             height: '100%',
-            background: 'white',
+            background: color,
             transform: 'scaleX(0)',
             transformOrigin: 'left'
         })
@@ -81,7 +81,7 @@ export default {
             position: 'absolute',
             width: '0',
             height: '100%',
-            background: 'rgba(255, 255, 255, 0.5)',
+            background: color + '88',
             transition: 'opacity 0.3s'
         })
 
