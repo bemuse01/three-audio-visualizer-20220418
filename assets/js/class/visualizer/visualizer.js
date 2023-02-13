@@ -96,7 +96,7 @@ export default  class{
         const renderScene = new RenderPass( this.scene, this.camera )
 
         // bloom composer
-        const bloomPass = new UnrealBloomPass( new THREE.Vector2( width, height ), 
+        this.bloomPass = new UnrealBloomPass( new THREE.Vector2( width, height ), 
             this.param.strength,
             this.param.radius,
             this.param.threshold
@@ -105,7 +105,7 @@ export default  class{
         this.bloomComposer = new EffectComposer(this.renderer)
         this.bloomComposer.renderToScreen = false
         this.bloomComposer.addPass(renderScene)
-        this.bloomComposer.addPass(bloomPass)
+        this.bloomComposer.addPass(this.bloomPass)
 
 
         // final composer
@@ -271,6 +271,11 @@ export default  class{
         this.size.el.h = height
         this.size.obj.w = PublicMethod.getVisibleWidth(this.camera, 0)
         this.size.obj.h = PublicMethod.getVisibleHeight(this.camera, 0)
+
+        this.bloomPass.resolution = new THREE.Vector2(width, height)
+
+        this.canvas.width = width * RATIO
+        this.canvas.height = height * RATIO
     }
     resizeObject(){
         for(const comp in this.comp){
