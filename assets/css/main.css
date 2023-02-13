@@ -1,0 +1,48 @@
+@import url('./visualizer.css');
+
+/* @font-face {
+    font-family: NotoSansDisplayLight;
+    src: url('../src/NotoSansDisplay-Light.ttf');
+}
+@font-face {
+    font-family: RobotoThin;
+    src: url('../src/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: RobotoLight;
+    src: url('../src/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: NotoSansThin;
+    src: url('../src/NotoSans-Thin.ttf');
+} */
+/* @font-face {
+    font-family: NotoSansExtraLight;
+    src: url('../src/NotoSans-ExtraLight.ttf');
+} */
+/* @font-face {
+    font-family: NotoSansLight;
+    src: url('../src/NotoSans-Light.ttf');
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    position: absolute;
+    background: black;
+}
+div#wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background: url('../src/bg.png') no-repeat center center / cover; */
+}
+canvas{
+    outline: none;
+}
